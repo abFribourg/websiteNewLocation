@@ -1,0 +1,22 @@
+<div id="game-container">
+  <div id="game-layout">
+    SNAKE <br> Score : {{ score }}
+    <br>
+    <svg [attr.width]="width * cellSize" [attr.height]="height * cellSize">
+      <rect [attr.width]="width * cellSize" [attr.height]="height * cellSize" style="fill:rgb(255,255,255);stroke-width:3;stroke:rgb(0,0,0)" />
+      <rect *ngFor="let cell of cells; index as i" [attr.x]="cell.x" [attr.y]="cell.y"
+      [attr.width]="cellSize" [attr.height]="cellSize" [ngStyle]="{'fill': cell.color}" />
+      <rect *ngIf="cherry" [attr.x]="cherry.x" [attr.y]="cherry.y"
+      [attr.width]="cellSize" [attr.height]="cellSize" [ngStyle]="{'fill': cherry.color}" />
+    </svg>
+
+    <div *ngIf="!start" class="start"><span (click)="startGame()" class="gradiant-title button">START</span></div>
+    <div *ngIf="start" class="pad"> &nbsp; &nbsp;<span (click)="changeDirection(4)" class="button">&uarr;</span> <br>
+      <span (click)="changeDirection(3)" class="button">&lsaquo;</span>&nbsp;
+      <span (click)="changeDirection(2)" class="button">&darr;</span>&nbsp;
+      <span (click)="changeDirection(1)" class="button">&rsaquo;</span>
+    </div>
+    <div *ngIf="gameOver" class="game-over"> <span class="gradiant-title"> GAME OVER</span> <br> <br>YOUR SCORE : {{score}}</div>
+  </div>
+
+</div>

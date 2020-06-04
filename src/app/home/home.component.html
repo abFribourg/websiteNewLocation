@@ -1,0 +1,55 @@
+<div id="main-container">
+
+  <div id="top-section"></div>
+  <div id="section1" class="section">
+    section 1
+  </div>
+  <div id="section2" class="section">
+    <p>La succursale fribourgeoise de <strong>ab ingénieurs sa</strong> bouge!</p>
+    <p class="multi-column-3">Depuis sa création le 1er mai 2019, la succursale de Fribourg a bien grandi. Trop à l'étroit dans ses locaux de la rue Saint-Michel et pour être prêt à relever les nouveaux défis qui l'attendent ces prochaines années, le bureau se dote d'un nouvel
+      outil de travail et prend ses nouveaux quartiers sur le plateau de Pérolles à la rue Hans-Fries.</p>
+
+    <div>
+      <agm-map [latitude]="lat" [longitude]="lng" [zoom]="zoom" [disableDefaultUI]="false" [zoomControl]="false" [scrollwheel]="false" (mapClick)="mapClicked($event)">
+
+        <agm-marker *ngFor="let m of markers; let i = index" (markerClick)="clickedMarker(m.label, i)" [latitude]="m.lat" [longitude]="m.lng" [label]="m.label" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
+
+        </agm-marker>
+      </agm-map>
+    </div>
+  </div>
+  <div id="section3" class="section">
+    <div class="discipline">
+      <a href="http://absa.ch/projets?c=batiments" target="_blank"><img src="assets/Fichier-5.png"></a><br> BÂTIMENTS <br> OUVRAGES D’ART
+    </div>
+    <div class="discipline">
+      <a href="http://absa.ch/projets?c=geotechnique" target="_blank"><img src="assets/Fichier-1.png"></a><br> GÉOTECHNIQUE <br> TRAVAUX SPÉCIAUX
+    </div>
+    <div class="discipline">
+      <a href="http://absa.ch/projets?c=genie-civil" target="_blank"><img src="assets/Fichier-6.png"></a><br> GÉNIE CIVIL <br> INFRASTRUCTURES
+    </div>
+    <div class="discipline">
+      <a href="http://absa.ch/projets?c=environnement" target="_blank"><img src="assets/Fichier-4.png"></a><br> ENVIRONNEMENT <br> DÉVELOPPEMENT DURABLE
+    </div>
+  </div>
+  <div id="section4" class="section">
+    <div class="main-contact">
+      <div class="contact-section">
+        <p>ab ingénieurs sa<br> Rue Hans-Fries 2 <br> 1700 Fribourg</p>
+        <p><a href="tel:0041263213555">026 321 35 55</a> <br>
+          <a href="mailto:fribourg@absa.ch">fribourg@absa.ch</a> <br>
+          <a href="http://www.absa.ch" target="_blank">www.absa.ch</a></p>
+        <p>2020 &copy; ab ingénieurs sa</p>
+      </div>
+      <div class="contact-section">
+        <p>
+          <a class="social-icon" target="_blank" href="https://www.linkedin.com/company/amsler-bombeli-et-associ-s-sa?trk=nmp_rec_act_company_photo"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+          <a class="social-icon" target="_blank" href="https://www.facebook.com/pages/biz/company/ab-ing%C3%A9nieurs-sa-ing%C3%A9nieurs-civils-l-g%C3%A9otechnique-l-environnement-255056307884579/"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+          <a class="social-icon" target="_blank" href="http://www.youtube.com/watch?v=CvZBcaXG3OA"><i class="fa fa-youtube-square" aria-hidden="true"></i></a>
+        </p>
+
+      </div>
+    </div>
+
+  </div>
+</div>
