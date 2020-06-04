@@ -20,7 +20,7 @@ import { HomeComponent } from './home/home.component';
     AgmCoreModule.forRoot({
       // please get your own API key here:
       // https://developers.google.com/maps/documentation/javascript/get-api-key?hl=en
-      apiKey: 'AIzaSyDDpyq_S7R73H3milYeY6IkSgMzEGR0P8o'
+      apiKey: ''
     })
   ],
   providers: [
